@@ -1,0 +1,36 @@
+- Retrival Argumented Generation -
+
+vectorization (vector search, (k) samples) 
+	Need (Vector Database)
+	text to vector (intfloat/multilingual-e5-base)
+	vector search - FAISS
+reranker (on 10 samples evaluate)
+	embedding (Bert - encoder)
+LLM
+	LLaMA 3 (13B +-free) or GPT-4 (API +bablo required) or Mistral (7B) (fatser than LAMA 3 but still good + free)
+	augmented prompt (you are a lawyer...)
+	context (info)
+	actual question
+
+
+FAISS: retrieve top 10–25 chunks
+↓
+Cross‑encoder reranker: re‑score those
+↓
+Select top 3–5 reranked chunks
+↓
+Pass to LLM for generation
+
+so 
+
+FAISS
+BAAI/bge-reranker-large
+LLaMA 3
+
+
+
+----------------------
+embedding
+
+there will be (file_path)
+vectors (embeddings)
